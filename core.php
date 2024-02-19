@@ -26,5 +26,3 @@ require './functions.php';
 // // Settings
 
 // $settings = getSettings($connect);
-
-?>

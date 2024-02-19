@@ -1,4 +1,11 @@
 RewriteEngine On
+
+# Remove .php extension for files inside /api directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^api/([^/]+)/?$ api/$1.php [L]
+
+# Remove .php extension for files outside /api directory
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/]+)/?$ $1.php [L]
