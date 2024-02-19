@@ -1,7 +1,7 @@
 <?php
 require "core.php";
 
-if (isset($_SESSION['user_email'])) {
+if (isset($_SESSION['email'])) {
 
     header('Location: ./dashboard');
 }

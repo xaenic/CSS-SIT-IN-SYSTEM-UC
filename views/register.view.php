@@ -83,7 +83,7 @@
         <div class="flex justify-end col-span-2">
 
             <div>
-                <a href="/register" class="text-blue-500">Already have an account?</a>
+                <a href="/login" class="text-blue-500">Already have an account?</a>
             </div>
         </div>
     </form>
@@ -97,18 +97,21 @@
             event.preventDefault();
             $('#submitButton').val('Loading')
             var formData = $(this).serialize();
-
-
+            $('#error').html('');
+            $('#success').html('');
+            const formdata = $(this);
             $.ajax({
                 type: 'POST',
                 url: '/register',
                 data: formData,
                 success: function(response) {
                     $('#submitButton').val('Register')
+                    console.log(response);
                     console.log(response == 'success')
                     if (response == 'success') {
                         $('#success').html('<p> Registered Successfully!</p>');
-                        $(this).trigger('reset');
+
+                        formdata.trigger('reset');
                         return
                     }
                     $('#error').html('<p>' + response + '</p>');

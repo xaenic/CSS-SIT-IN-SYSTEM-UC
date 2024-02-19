@@ -1,8 +1,8 @@
 <?php
 require "core.php";
-require './shared/header.php';
 
-if (isset($_SESSION['user_email'])) {
+
+if (isset($_SESSION['email'])) {
 
     header('Location: ./dashboard');
 }
@@ -37,7 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         return;
     }
+    $get = $connect->prepare("SELECT * FROM students WHERE email = :email");
+    $get->execute(array(
+        ':email' => $email,
+    ));
 
+    $result_login = $get->fetch();
+    if ($result_login !== false) {
+        echo 'Email address already exists.';
+        return;
+    }
     $statment = $connect->prepare(
         "INSERT INTO students (id,email,password,first_name,last_name,id_no,course,year) VALUES (null, :email, :password, :first_name, :last_name,:id_no,:course,:year)"
     );
@@ -57,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-
+require './shared/header.php';
 
 
 ?>
