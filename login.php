@@ -35,9 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $result_login = $statement->fetch();
+    
     if ($result_login !== false) {
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['email'] = $email;
+         $_SESSION['firstname'] = $result_login['first_name'];
         echo 'success';
         return;
     } else {
