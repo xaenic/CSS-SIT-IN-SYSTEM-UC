@@ -1,4 +1,4 @@
-<div class="max-w-[680px] mx-auto mt-20">
+<div class="max-w-[680px] mx-auto">
     <form id="register" method="POST" class="grid grid-cols-1 md:grid-cols-2 bg-white p-10 rounded-lg gap-7 ">
 
         <div class="flex items-center flex-col gap-2 col-span-2">

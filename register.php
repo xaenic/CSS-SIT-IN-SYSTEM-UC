@@ -72,6 +72,6 @@ require './shared/header.php';
 ?>
 
 
-<div class="md:p-5 md:px-36    rounded-xl md:pt-14 p-2 min-h-[96vh] ">
+<div class="md:p-5 md:px-36    rounded-xl md:pt-10 p-2 min-h-[96vh] ">
     <?php require './views/register.view.php'; ?>
 </div>

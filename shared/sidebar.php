@@ -1,4 +1,5 @@
-<aside class="p-5 rounded-xl shadow-sm h-full bg-white">
+<aside class="p-5 rounded-xl shadow-sm h-full bg-white flex flex-col justify-between">
+    <div>
     <section id="widget_1" class="border-b border-gray-200 pb-1">
         <h1 class="text-center font-bold">SitHub</h1>
     </section>
@@ -17,5 +18,6 @@
             <a href="/dashboard" class="">Session History</a>
         </div>
     </section>
-    <section id="widget_3"></section>
+    </div>
+    <section id="widget_3"><a href="/logout">Logout</a></section>
 </aside>
