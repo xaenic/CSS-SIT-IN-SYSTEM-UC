@@ -72,6 +72,16 @@ require './shared/header.php';
 ?>
 
 
-<div class="md:p-5 md:px-36    rounded-xl md:pt-10 p-2 min-h-[96vh] ">
+<div class=" relative  rounded-xl   min-h-screen relative grid grid-cols-1 lg:grid-cols-12 w-full p-2 md:p-10 overflow-hidden">
+    <div class="bg-gradient-to-tl top-32 from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl right-32 top-32 from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl bottom-32 left-36 from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl bottom-20 left-[50%] from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl top-[10%] right-[35%] from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl left-[25%] top-[-60px] from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
+    <div class="bg-gradient-to-tl right-[-10px] bottom-[0] from-[#FFDEC1] to-[#FBD7FF] absolute -z-10 w-32 rounded-full blur h-32"></div>
     <?php require './views/register.view.php'; ?>
+
 </div>
+
+<?php require './shared/footer.php'; ?>
