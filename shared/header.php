@@ -7,6 +7,7 @@
     <title><?php echo APPLICATION_NAME; ?></title>
     <script src="../assets/tailwind.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../assets/framer-motion.dev.min.js"></script>
 </head>
 
-<body class="min-h-screen bg-slate-100 p-0">
+<body class="min-h-screen bg-slate-100 p-0 flex flex-col justify-between">
