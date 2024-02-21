@@ -1,6 +1,6 @@
 <?php
 require "core.php";
-
+$page_title = "Login";
 if (isset($_SESSION['email'])) {
 
     header('Location: ./dashboard');
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-
+$page_title = "Login";
 require './shared/header.php';
 ?>
 <div class="md:p-5 md:px-36    rounded-xl md:pt-14 p-2 ">

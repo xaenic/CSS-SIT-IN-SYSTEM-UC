@@ -1,7 +1,7 @@
 <?php
 require "core.php";
 
-
+$page_title = "Register";
 if (isset($_SESSION['email'])) {
 
     header('Location: ./dashboard');

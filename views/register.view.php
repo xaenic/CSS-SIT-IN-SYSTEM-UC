@@ -9,8 +9,8 @@
 
             <p class="text-2xl font-bold text-slate-800 mt-3">Create your Account</p>
             <p class="text-md font-md text-slate-700">Start your website in seconds. Already have an account? <a href="/login" class="text-blue-500 hover:underline">Login here.</a></p>
-            <div id="error" class="text-red-600 col-span-2"></div>
-            <div id="success" class="text-green-600 col-span-2"></div>
+            <div id="error" class="mt-5 text-red-600 col-span-2"></div>
+            <div id="success" class="mt-5 text-green-600 col-span-2"></div>
         </div>
         <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5    w-full">
             <div class="flex flex-col gap-1">
