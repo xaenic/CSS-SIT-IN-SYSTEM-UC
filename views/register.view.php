@@ -1,5 +1,5 @@
 <div class="col-span-6 md:p-5 flex items-center">
-    <form id="register" action="register" method="post" class="p-5 bg-white col-span-6 shadow-sm rounded-xl flex flex-col items-start w-full">
+    <form id="register" action="register" method="post" class="shadow-xl p-5 bg-white col-span-6 shadow-sm rounded-xl flex flex-col items-start w-full">
 
         <div class="flex flex-col">
             <div class="flex items-center gap-3">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Last Name</label>
+                <label class="text-slate-600 font-medium">Last Name</label>
                 <div class="flex gap-2 items-center border border-gray-200 rounded-lg px-3 p-2 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Student ID</label>
+                <label class="text-slate-600 font-medium">Student ID</label>
                 <div class="flex gap-2 items-center border border-gray-200 rounded-lg px-3 p-2 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
                         <path fill="currentColor" fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h12A1.5 1.5 0 0 1 15 3.5v8a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 11.5zM3 6a2 2 0 1 1 4 0a2 2 0 0 1-4 0m9 0H9V5h3zm0 3H9V8h3zM5 9a2.927 2.927 0 0 0-2.618 1.618l-.33.658A.5.5 0 0 0 2.5 12h5a.5.5 0 0 0 .447-.724l-.329-.658A2.927 2.927 0 0 0 5 9" clip-rule="evenodd" />
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Course</label>
+                <label class="text-slate-600 font-medium">Course</label>
                 <div class="flex gap-2 items-center border border-gray-200 rounded-lg px-3 p-2 text-sm relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Year Level</label>
+                <label class="text-slate-600 font-medium">Year Level</label>
                 <div class="flex gap-2 items-center border border-gray-200 rounded-lg text-sm px-3 p-2 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Email Address</label>
+                <label class="text-slate-600 font-medium">Email Address</label>
                 <div class="flex gap-2 items-center border border-gray-200 rounded-lg px-3 p-2 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4" />
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Password</label>
+                <label class="text-slate-600 font-medium">Password</label>
                 <div class="border border-gray-200 rounded-lg px-3 p-2 flex gap-2 items-center relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label class="text-slate-600">Confirm Password</label>
+                <label class="text-slate-600 font-medium">Confirm Password</label>
                 <div class="border border-gray-200 rounded-lg px-3 p-2 flex gap-2 items-center relative">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h1V6q0-2.075 1.463-3.537T12 1q2.075 0 3.538 1.463T17 6v2h1q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm6-5q.825 0 1.413-.587T14 15q0-.825-.587-1.412T12 13q-.825 0-1.412.588T10 15q0 .825.588 1.413T12 17M9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6z" />
@@ -110,7 +110,7 @@
         </div>
     </form>
 </div>
-<div class="col-span-6  hidden lg:flex items-center ">
+<div class="col-span-6  hidden lg:flex items-center  ">
     <img src="../assets/images/Saly-12.png" class=" object-cover  w-full h-full" />
 
 </div>

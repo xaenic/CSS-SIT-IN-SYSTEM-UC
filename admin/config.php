@@ -13,7 +13,7 @@ PROJECT URL
 // define ('_SITE_URL', 'localhost');
 
 
-define ('APPLICATION_NAME','SitHub');
+define ('APPLICATION_NAME','SitInMe');
 //DATABASE CONFIGURATION 
 
 
