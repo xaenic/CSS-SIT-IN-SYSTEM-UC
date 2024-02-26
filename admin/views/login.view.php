@@ -1,10 +1,10 @@
 <div class="max-w-[480px] mx-auto mt-14">
-    <form id="login" action="/login" method="POST" class="flex flex-col bg-white p-10 rounded-lg gap-4 ">
+    <form id="login" action="" method="POST" class="flex flex-col bg-white p-10 rounded-lg gap-4 ">
 
         <div class="flex items-center flex-col gap-2 col-span-12">
 
             <small class="text-xl font-medium">Welcome to SitHub</small>
-<small class="text-sm  text-slate-500">Admin Dashboard</small>
+            <small class="text-sm  text-slate-500">Admin Dashboard</small>
             <h1 class="text-md font-normal"> Let's get started.</h1>
 
         </div>
@@ -56,7 +56,7 @@
             // // AJAX request to submit form data
             $.ajax({
                 type: 'POST',
-                url: '/login', // Change 'submit.php' to your backend script URL
+                url: '/admin/login', // Change 'submit.php' to your backend script URL
                 data: formData,
                 success: function(response) {
                     $('#submitButton').val('Login')

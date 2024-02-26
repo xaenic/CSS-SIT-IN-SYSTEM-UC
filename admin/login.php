@@ -26,19 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         return;
     }
-    $statement = $connect->prepare("SELECT * FROM students WHERE email = :email AND password = :password AND active = 1 ");
+    $statement = $connect->prepare("SELECT * FROM user WHERE email = :email AND password = :password AND active = 1 ");
     $statement->execute(array(
         ':email' => $email,
         ':password' => $password
     ));
-
-
     $result_login = $statement->fetch();
-    
+
     if ($result_login !== false) {
-        $_SESSION['isLoggedIn'] = true;
+        $_SESSION['role'] = $result_login['role'];
         $_SESSION['email'] = $email;
-         $_SESSION['firstname'] = $result_login['first_name'];
+        $_SESSION['firstname'] = $result_login['first_name'];
         echo 'success';
         return;
     } else {

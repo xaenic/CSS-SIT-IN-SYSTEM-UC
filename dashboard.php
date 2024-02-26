@@ -5,6 +5,9 @@ require './shared/header.php';
 
 if (!isset($_SESSION['email']))
     header('Location: login');
+
+if (isset($_SESSION['role']))
+    header('Location: /admin/dashboard');
 ?>
 
 <div class="grid grid-cols-12  min-h-screen ">
