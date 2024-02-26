@@ -10,7 +10,7 @@ if (!isset($_SESSION['email']))
 
 
 <div class="flex ">
-    <div class="h-96 bg-gradient-to-r from-gray-900 to-slate-800 w-full  absolute -z-20">
+    <div class="h-96 bg-gray-900 w-full  absolute -z-20">
 
     </div>
     <!-- Sidebar -->
