@@ -1,21 +1,19 @@
 <?php
+$page_title = "Login - Admin";
 require "core.php";
-$page_title = 'Dashboard';
 require './shared/header.php';
-
 if (!isset($_SESSION['email']))
-    header('Location: login');
-
+    header('Location: /login');
 if (isset($_SESSION['role']))
     header('Location: /admin/dashboard');
 ?>
 
-<div class="grid grid-cols-12  min-h-screen ">
-    <div class="col-span-2 hidden md:block">
-        <?php require './shared/sidebar.php'; ?>
-    </div>
-    <div class="col-span-12 md:col-span-10 pt-5 bg-gradient-to-r from-cyan-500 to-blue-500 p-5">
-        <?php require './shared/topbar.php'; ?>
+
+<div class="flex">
+    <!-- Sidebar -->
+    <?php require './shared/sidebar.php'; ?>
+    <!-- Main Content -->
+    <main class="flex-1 p-5 ml-64">
         <?php require './views/dashboard.view.php'; ?>
-    </div>
+    </main>
 </div>
