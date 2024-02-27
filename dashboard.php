@@ -9,11 +9,12 @@ if (isset($_SESSION['role']))
 ?>
 
 
-<div class="flex">
+<div class="flex bg-gray-950 min-h-screen">
     <!-- Sidebar -->
     <?php require './shared/sidebar.php'; ?>
     <!-- Main Content -->
-    <main class="flex-1 p-5 ml-64">
+    <main class="flex-1 p-5 ml-60">
+        <?php require './shared/topbar.php'; ?>
         <?php require './views/dashboard.view.php'; ?>
     </main>
 </div>

@@ -2,13 +2,13 @@
 $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
 
 ?>
-<aside class="w-64 bg-white p-5 rounded-xl shadow-lg m-2 text-gray-100 fixed top-0 left-0 bottom-0 overflow-y-auto">
-    <div class="h-full text-black  ">
+<aside class="w-56 bg-gradient-to-t to-slate-800 from-gray-900 p-5 rounded-xl shadow-lg m-4 text-gray-100 fixed top-0 left-0 bottom-0 overflow-y-auto flex flex-col justify-between">
+    <div class="h-full text-white  ">
         <section id="widget_1" class="border-b border-gray-200 pb-1">
             <h1 class="text-center font-bold">SitHub</h1>
         </section>
         <section id="widget_2" class="mt-5 flex flex-col gap-5">
-            <div class="flex gap-2 items-center bg-gray-900 hover:bg-slate-400 duration-200 transition-colors cursor-pointer text-white rounded-lg px-3 p-2  ">
+            <div class="flex gap-2 items-center bg-gray-900 cursor-pointer text-white rounded-lg px-3 p-2  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
                 </svg>
@@ -18,7 +18,7 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z" />
                 </svg>
-                <a href="/dashboard" class="">Reservation</a>
+                <a href="/dashboard" class="text-white">Reservation</a>
             </div>
 
             <div class="flex gap-2 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2  ">
@@ -29,5 +29,14 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
             </div>
         </section>
     </div>
+    <div class=" hover:bg-slate-900 p-2 rounded-lg duration-200 transition-colors ">
+        <div class="flex gap-1 justify-center items-center w-full">
 
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor" d="m17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5M4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z" />
+            </svg>
+            <a href="/logout" class=" text-center">Logout</a>
+        </div>
+
+    </div>
 </aside>

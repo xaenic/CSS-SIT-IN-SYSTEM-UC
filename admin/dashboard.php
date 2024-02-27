@@ -4,15 +4,16 @@ require "core.php";
 require '../shared/header.php';
 if (!isset($_SESSION['email']))
     header('Location: /admin/login');
+if (!isset($_SESSION['role']))
+    header('Location: /');
+
 
 
 ?>
 
 
-<div class="flex ">
-    <div class="h-96 bg-gray-900 w-full  absolute -z-20">
+<div class="flex min-h-screen bg-gray-950 min-h-screen ">
 
-    </div>
     <!-- Sidebar -->
     <?php require '../shared/sidebar.php'; ?>
     <!-- Main Content -->
