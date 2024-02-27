@@ -8,7 +8,7 @@
             </div>
 
             <p class="text-2xl font-bold text-slate-800 mt-3">Create your Account</p>
-            <p class="text-md font-md text-slate-700">Start your website in seconds. Already have an account? <a href="/login" class="text-blue-500 hover:underline">Login here.</a></p>
+            <p class="text-md font-md text-slate-700">Start your website in seconds. Already have an account? <a href="/login" class="text-blue-500 hover:underline">Sign In.</a></p>
             <div id="error" class="mt-5 text-red-600 col-span-2"></div>
             <div id="success" class="mt-5 text-green-600 col-span-2"></div>
         </div>
@@ -110,8 +110,9 @@
         </div>
     </form>
 </div>
-<div class="col-span-6  hidden lg:flex items-center  ">
-    <img src="../assets/images/Saly-12.png" class=" object-cover  w-full h-full" />
+<div class="col-span-6  hidden lg:flex   ">
+    <img src="../assets/images/Saly-16.png" class=" mt-[-20px] object-cover  w-full h-full" />
+
 
 </div>
 

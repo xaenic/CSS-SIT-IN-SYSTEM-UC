@@ -31,9 +31,7 @@
             </div>
         </div>
         <div class="flex justify-between">
-            <div>
-                <a href="/register" class="text-slate-500">Don't have an account? </a>
-            </div>
+
             <div>
                 <a href="/register" class="text-blue-500">Forgot Password? </a>
             </div>
