@@ -4,8 +4,9 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
 ?>
 <aside class="w-56 bg-gradient-to-t to-slate-800 from-gray-900 p-5 rounded-xl shadow-lg m-4 text-gray-100 fixed top-0 left-0 bottom-0 overflow-y-auto flex flex-col justify-between">
     <div class="h-full text-white  ">
-        <section id="widget_1" class="border-b border-gray-200 pb-1">
-            <h1 class="text-center font-bold">SitHub</h1>
+        <section id="widget_1" class="border-b border-gray-200 pb-4 flex items-center gap-2 justify-center ">
+            <img src="../assets/images/ccs_logo.png" class="w-10 h-10" />
+            <h1 class="text-center font-bold">CCSLab</h1>
         </section>
         <section id="widget_2" class="mt-5 flex flex-col gap-5">
             <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Dashboard') {
