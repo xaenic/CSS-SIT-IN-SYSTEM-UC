@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result_login !== false) {
         $_SESSION['role'] = $result_login['role'];
         $_SESSION['email'] = $email;
-        $_SESSION['firstname'] = $result_login['first_name'];
+        $_SESSION['first_name'] = $result_login['first_name'];
         echo 'success';
         return;
     } else {
