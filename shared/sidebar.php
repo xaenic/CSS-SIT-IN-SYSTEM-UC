@@ -8,17 +8,31 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
             <h1 class="text-center font-bold">SitHub</h1>
         </section>
         <section id="widget_2" class="mt-5 flex flex-col gap-5">
-            <div class="flex gap-2 items-center bg-gray-900 cursor-pointer text-white rounded-lg px-3 p-2  ">
+            <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Dashboard') {
+                                                                        echo 'bg-gray-900';
+                                                                    } ?> cursor-pointer text-white rounded-lg px-3 p-2  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
                 </svg>
                 <a href="<?php echo $dashboard; ?>" class="">Dashboard</a>
             </div>
-            <div class="flex gap-2 items-center duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2  ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z" />
-                </svg>
-                <a href="/dashboard" class="text-white">Reservation</a>
+
+
+            <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Laboratories') {
+                                                                        echo 'bg-gray-900';
+                                                                    } ?>  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2  ">
+
+
+                <?php if (isset($_SESSION['role'])) {
+                    echo '
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                             <path fill="currentColor" d="M13 18v2h4v2H7v-2h4v-2H2.992A.998.998 0 0 1 2 16.992V4.008C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.985c0 .557-.455 1.008-.992 1.008z" />
+                        </svg>
+                        <a href="/admin/labs" class="text-white">Laboratories</a>';
+                } else echo '<a href="/reservation" class="text-white">Reservation</a>';
+
+                ?>
+
             </div>
 
             <div class="flex gap-2 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2  ">

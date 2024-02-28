@@ -11,6 +11,13 @@ function connect($database)
         return false;
     }
 }
+
+function get_students($connect)
+{
+    $sentence = $connect->prepare("SELECT * FROM students");
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
 // function cleardata($data)
 // {
 //     $antiXss = new AntiXSS();

@@ -1,14 +1,12 @@
 <?php
-$page_title = "Dashboard";
+$page_title = "Laboratories";
 require "core.php";
 require '../shared/header.php';
 if (!isset($_SESSION['email']))
     header('Location: /admin/login');
 if (!isset($_SESSION['role']))
     header('Location: /');
-
 $connect = connect($database);
-
 try {
     $connect;
 } catch (PDOException $e) {
@@ -16,15 +14,6 @@ try {
     echo "Error: ." . $e->getMessage();
 
     return;
-}
-$students = get_students($connect);
-
-
-$disabled = 0;
-
-foreach ($students as $student) {
-    if ($student['active'] != 1)
-        $disabled++;
 }
 ?>
 
@@ -38,7 +27,7 @@ foreach ($students as $student) {
     <main class="flex-1 p-5 ml-64">
         <?php require '../shared/topbar.php'; ?>
         <div class="text-white">
-            <?php require './views/dashboard.view.php'; ?>
+            <?php require './views/labs.view.php'; ?>
         </div>
     </main>
 </div>
