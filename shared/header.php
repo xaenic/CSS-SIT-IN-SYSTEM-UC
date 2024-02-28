@@ -21,4 +21,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
-<body class="min-h-screen bg-slate-100 p-0 flex flex-col justify-between">
+<body class="min-h-screen">
