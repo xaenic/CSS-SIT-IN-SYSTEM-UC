@@ -18,24 +18,28 @@ try {
     return;
 }
 $students = get_students($connect);
-
-
+$labs = get_labs($connect);
 $disabled = 0;
 
+$disabled_labs = 0;
 foreach ($students as $student) {
     if ($student['active'] != 1)
         $disabled++;
 }
+foreach ($labs as $lab) {
+    if ($lab['active'] != 1)
+        $disabled_labs++;
+}
 ?>
 
 
-<div class="flex min-h-screen bg-gray-950 min-h-screen ">
+<div class="flex min-h-screen bg-gradient-to-t from-slate-900 to-gray-900 min-h-screen ">
 
     <!-- Sidebar -->
     <?php require '../shared/sidebar.php'; ?>
     <!-- Main Content -->
 
-    <main class="flex-1 p-5 ml-64">
+    <main class="flex-1 p-4 lg:ml-64  lg:pt-5">
         <?php require '../shared/topbar.php'; ?>
         <div class="text-white">
             <?php require './views/dashboard.view.php'; ?>

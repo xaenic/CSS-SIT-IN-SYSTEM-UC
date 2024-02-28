@@ -23,7 +23,7 @@ $labs = get_labs($connect);
 ?>
 
 
-<div class="min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  min-h-screen ">
+<div class="min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  ">
 
     <!-- Sidebar -->
     <?php require '../shared/sidebar.php'; ?>
