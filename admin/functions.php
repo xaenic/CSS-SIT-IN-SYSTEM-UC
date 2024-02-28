@@ -24,6 +24,21 @@ function get_labs($connect)
     $sentence->execute();
     return $sentence->fetchAll(PDO::FETCH_ASSOC);
 }
+function get_schedules($connect)
+{
+    $sentence = $connect->prepare("SELECT * FROM schedules");
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
+function get_staffs($connect)
+{
+    $statement = $connect->prepare("SELECT * FROM user WHERE role = :role");
+    $statement->execute(array(
+        ':role' => 'staff'
+    ));
+
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 // function cleardata($data)
 // {
 //     $antiXss = new AntiXSS();

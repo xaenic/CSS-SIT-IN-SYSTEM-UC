@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Sidebar -->
     <?php require '../shared/sidebar.php'; ?>
     <!-- Main Content -->
-    <main class="flex-1 p-5 ml-64">
+    <main class="flex-1 p-4 lg:ml-64  lg:pt-5">
         <?php require '../shared/topbar.php'; ?>
         <div class="text-white">
             <?php require './views/new_lab.view.php'; ?>
