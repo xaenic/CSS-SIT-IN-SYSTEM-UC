@@ -1,5 +1,6 @@
 <?php
 $page_title = "Laboratories";
+$parent = [""];
 require "core.php";
 require '../shared/header.php';
 if (!isset($_SESSION['email']))
@@ -28,7 +29,7 @@ $labs = get_labs($connect);
     <?php require '../shared/sidebar.php'; ?>
     <!-- Main Content -->
 
-    <main class="flex-1 p-2 xl:ml-64  xl:pt-5">
+    <main class="flex-1 p-4 lg:ml-64  lg:pt-5">
         <?php require '../shared/topbar.php'; ?>
         <div class="text-white">
             <?php require './views/labs.view.php'; ?>

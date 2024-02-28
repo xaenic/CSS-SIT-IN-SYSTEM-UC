@@ -1,9 +1,9 @@
 <div class="mt-10 flex flex-col gap-6">
     <div class="border-b pb-2 border-gray-700">
-        <h1 class="text-xl">List of Laboratories</h1>
+        <h1 class="text-xl">Laboratory</h1>
     </div>
     <div class="flex justify-end">
-        <a href="/actions/new_lab" class="px-3 p-2 bg-blue-600   rounded-md hover:bg-blue-900 duration-200 transition-colors flex items-center gap-1">
+        <a href="new_lab" class="px-3 p-2 bg-slate-800  rounded-md hover:bg-blue-900 duration-200 transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                 <g fill="none" fill-rule="evenodd">
                     <path d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z" />
@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <div class="bg-gradient-to-r from-slate-800 to-gray-900  rounded-lg flex flex-col ">
+    <div class="bg-slate-800   rounded-lg flex flex-col ">
         <div class="overflow-x-auto flex-wrap  gap-3 flex items-center justify-between p-5 border-b border-gray-700">
             <div class="flex items-center gap-2">
                 <h1>Show</h1>
@@ -60,7 +60,7 @@
                     foreach ($labs as $lab) {
 
 
-                        echo '<tr class="odd:bg-gray-900 bg-slate-900">
+                        echo '<tr class="odd:bg-gray-700 bg-slate-800">
                         <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">' . $lab['id'] . '</td>
                         <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">' . $lab['room_number'] . '</td>
                         <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">' . $lab['room_name'] . '</td>
