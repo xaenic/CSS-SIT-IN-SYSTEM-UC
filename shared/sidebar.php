@@ -33,30 +33,50 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
                              <path fill="currentColor" d="M13 18v2h4v2H7v-2h4v-2H2.992A.998.998 0 0 1 2 16.992V4.008C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.985c0 .557-.455 1.008-.992 1.008z" />
                         </svg>
                         <a href="/admin/labs" class="text-white">Laboratories</a>';
-                } else echo '<a href="/reservation" class="text-white">Reservation</a>';
+                } else echo '
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                <a href="/reservation" class="text-white">Reservation</a>';
 
                 ?>
 
             </div>
+            <?php
+            if (isset($_SESSION['role'])) {
+                echo '<div class="flex gap-2 hover:bg-slate-900 items-center duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 ';
+                if ($page_title == "Staffs") {
+                    echo 'bg-gray-900';
+                }
+                echo ' duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.39 3.39 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.39 3.39 0 0 0 15 11a3.5 3.5 0 0 0 0-7" />
+            </svg>
+            <a href="/admin/staffs" class="text-white">Staffs</a>
+        </div>
+        <div class="flex gap-2 hover:bg-slate-900 items-center duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 ';
+                if ($page_title == "Schedules") {
+                    echo 'bg-gray-900';
+                }
+                echo ' duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z" />
+            </svg>
+            <a href="/admin/schedules" class="text-white">Schedules</a>
+        </div>';
+            } else {
 
-            <div class="flex gap-2 hover:bg-slate-900 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 
-            <?php if ($page_title == 'Staffs') {
-                echo 'bg-gray-900';
-            } ?> duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.39 3.39 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.39 3.39 0 0 0 15 11a3.5 3.5 0 0 0 0-7" />
-                </svg>
-                <a href="/admin/staffs" class="text-white">Staffs</a>
-            </div>
-            <div class="flex gap-2 hover:bg-slate-900 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 
-            <?php if ($page_title == 'Schedules') {
-                echo 'bg-gray-900';
-            } ?> duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
+                echo ' <div class="flex gap-2 hover:bg-slate-900 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 ';
+                if ($page_title == 'Schedules') {
+                    echo 'bg-gray-900';
+                }
+                echo 'duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z" />
                 </svg>
-                <a href="/admin/schedules" class="text-white">Schedules</a>
-            </div>
+                <a href="/admin/schedules" class="text-white">Settings</a>
+            </div>';
+            }
+            ?>
+
         </section>
     </div>
     <div class=" hover:bg-slate-900 p-2 rounded-lg duration-200 transition-colors ">

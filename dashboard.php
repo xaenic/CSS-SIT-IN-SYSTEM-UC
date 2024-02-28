@@ -1,5 +1,6 @@
 <?php
-$page_title = "Login - Admin";
+$page_title = "Dashboard";
+$parent = [""];
 require "core.php";
 require './shared/header.php';
 if (!isset($_SESSION['email']))
@@ -9,11 +10,11 @@ if (isset($_SESSION['role']))
 ?>
 
 
-<div class="flex bg-gray-950 min-h-screen">
+<div class="flex min-h-screen bg-gradient-to-t from-slate-900 to-gray-900 min-h-screen ">
     <!-- Sidebar -->
     <?php require './shared/sidebar.php'; ?>
     <!-- Main Content -->
-    <main class="flex-1 p-5 ml-60">
+    <main class="flex-1 p-4 lg:ml-64  lg:pt-5">
         <?php require './shared/topbar.php'; ?>
         <?php require './views/dashboard.view.php'; ?>
     </main>
