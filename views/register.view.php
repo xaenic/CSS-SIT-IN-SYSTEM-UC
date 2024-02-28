@@ -3,8 +3,8 @@
 
         <div class="flex flex-col">
             <div class="flex items-center gap-3">
-                <img src="https://veloxify.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.5e917d00.png&w=256&q=75" class="w-7 h-10" />
-                <h1 class="text-xl font-bold  text-slate-900">SitHub</h1>
+                <img src="../assets/images/ccs_logo.png" class="w-10 h-10" />
+                <h1 class="text-xl font-bold  text-slate-900">CCSLab</h1>
             </div>
 
             <p class="text-2xl font-bold text-slate-800 mt-3">Create your Account</p>

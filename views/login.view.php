@@ -2,8 +2,8 @@
     <form id="login" action="/login" method="POST" class="flex flex-col bg-white p-10 rounded-lg gap-4 ">
 
         <div class="flex items-center flex-col gap-2 col-span-12">
-
-            <small class="text-xl font-medium">Welcome to SitHub</small>
+            <img src="../assets/images/ccs_logo.png" class="w-10 h-10" />
+            <small class="text-xl font-medium">Welcome to CCSLab</small>
 
             <h1 class="text-md font-normal"> Let's get started.</h1>
 
