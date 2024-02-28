@@ -1,7 +1,11 @@
 <div class="bg-gradient-to-l  from-slate-700 to-slate-800 rounded-xl p-2 flex justify-between px-5 items-center">
-
     <div>
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center text-white">
+
+
+            <svg id="showSide" class="cursor-pointer lg:hidden" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M2 5.995c0-.55.446-.995.995-.995h8.01a.995.995 0 0 1 0 1.99h-8.01A.995.995 0 0 1 2 5.995M2 12c0-.55.446-.995.995-.995h18.01a.995.995 0 1 1 0 1.99H2.995A.995.995 0 0 1 2 12m.995 5.01a.995.995 0 0 0 0 1.99h12.01a.995.995 0 0 0 0-1.99z" />
+            </svg>
             <?php
             if (isset($_SESSION['role'])) {
                 echo '<a href="/admin/dashboard.php" class="text-white hover:text-blue-600">Dashboard</a>';
