@@ -15,16 +15,20 @@ try {
 
     return;
 }
+
+$labs = get_labs($connect);
+
+
 ?>
 
 
-<div class="flex min-h-screen bg-gray-950 min-h-screen ">
+<div class="flex min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  min-h-screen flex-wrap ">
 
     <!-- Sidebar -->
     <?php require '../shared/sidebar.php'; ?>
     <!-- Main Content -->
 
-    <main class="flex-1 p-5 ml-64">
+    <main class="flex-1 p-2 xl:ml-64  xl:pt-5">
         <?php require '../shared/topbar.php'; ?>
         <div class="text-white">
             <?php require './views/labs.view.php'; ?>

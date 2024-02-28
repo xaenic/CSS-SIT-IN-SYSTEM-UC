@@ -18,6 +18,12 @@ function get_students($connect)
     $sentence->execute();
     return $sentence->fetchAll(PDO::FETCH_ASSOC);
 }
+function get_labs($connect)
+{
+    $sentence = $connect->prepare("SELECT * FROM labs");
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
 // function cleardata($data)
 // {
 //     $antiXss = new AntiXSS();

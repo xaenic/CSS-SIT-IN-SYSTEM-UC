@@ -2,7 +2,7 @@
 $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
 
 ?>
-<aside class="w-56 bg-gradient-to-t to-slate-800 from-gray-900 p-5 rounded-xl shadow-lg m-4 text-gray-100 fixed top-0 left-0 bottom-0 overflow-y-auto flex flex-col justify-between">
+<aside class="xl:flex hidden w-56 bg-gradient-to-t to-slate-800 from-gray-900 p-5 rounded-xl  m-4 text-gray-100 fixed top-0 left-0 bottom-0 overflow-y-auto  flex-col justify-between">
     <div class="h-full text-white  ">
         <section id="widget_1" class="border-b border-gray-200 pb-4 flex items-center gap-2 justify-center ">
             <img src="../assets/images/ccs_logo.png" class="w-10 h-10" />
