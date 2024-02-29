@@ -73,10 +73,10 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
                 <a href="/admin/schedules" class="text-white">Sessions</a>
             </div>';
                 echo ' <div class="flex gap-2 hover:bg-slate-900 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 ';
-                if ($page_title == 'Schedules') {
+                if ($page_title == 'Profile') {
                     echo 'bg-gray-900';
                 }
-                echo 'duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
+                echo ' duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
                 <a href="/profile" class="text-white">Profile</a>
             </div>';

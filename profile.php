@@ -1,5 +1,5 @@
 <?php
-$page_title = "Dashboard";
+$page_title = "Profile";
 $parent = [""];
 require "core.php";
 require './shared/header.php';
@@ -25,6 +25,6 @@ $user = $statement->fetch();
     <!-- Main Content -->
     <main class="flex-1 p-4 lg:ml-64  lg:pt-5">
         <?php require './shared/topbar.php'; ?>
-        <?php require './views/dashboard.view.php'; ?>
+        <?php require './views/profile.view.php'; ?>
     </main>
 </div>
