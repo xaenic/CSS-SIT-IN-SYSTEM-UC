@@ -7,6 +7,15 @@ if (!isset($_SESSION['email']))
     header('Location: /login');
 if (isset($_SESSION['role']))
     header('Location: /admin/dashboard');
+
+$connect = connect($database);
+
+$statement = $connect->prepare("SELECT * FROM students WHERE email = :email AND active = 1 ");
+$statement->execute(array(
+    ':email' => $_SESSION['email'],
+));
+
+$user = $statement->fetch();
 ?>
 
 

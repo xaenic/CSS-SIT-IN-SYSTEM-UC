@@ -69,10 +69,16 @@ $dashboard = isset($_POST['role']) ? '/dashboard' : '/admin/dashboard';
                     echo 'bg-gray-900';
                 }
                 echo 'duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z" />
-                </svg>
-                <a href="/admin/schedules" class="text-white">Settings</a>
+               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5"/><path d="M12 13a1 1 0 1 0 0-2a1 1 0 0 0 0 2m9 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/></g></svg>
+                <a href="/admin/schedules" class="text-white">Sessions</a>
+            </div>';
+                echo ' <div class="flex gap-2 hover:bg-slate-900 items-center  duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2 ';
+                if ($page_title == 'Schedules') {
+                    echo 'bg-gray-900';
+                }
+                echo 'duration-200 transition-colors cursor-pointer rounded-lg px-3 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+                <a href="/admin/schedules" class="text-white">Profile</a>
             </div>';
             }
             ?>

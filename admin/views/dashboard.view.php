@@ -1,4 +1,4 @@
-<div class="flex flex-wrap  items-center justify-between mt-8 gap-4">
+<div class="flex flex-wrap  items-center  mt-8 gap-4">
     <div class="bg-slate-800  text-white p-5 w-full lg:w-72 rounded-md flex flex-col gap-3">
         <div class="flex justify-between items-center">
             <h1>STUDENTS</h1>
