@@ -37,6 +37,13 @@
                                 value="<?php echo $user['id_no'] ?>" />
                         </div>
                     </div>
+                     <div>
+                        <label>Email</label>
+                        <div>
+                            <input class="bg-transparent text-slate-300" type="text"
+                                value="<?php echo $user['email'] ?>" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
