@@ -33,7 +33,8 @@
                     <div>
                         <label>ID NO</label>
                         <div>
-                            <input class="bg-transparent" type="text" value="<?php echo $user['id_no'] ?>" />
+                            <input class="bg-transparent text-slate-300" type="text"
+                                value="<?php echo $user['id_no'] ?>" />
                         </div>
                     </div>
                 </div>
