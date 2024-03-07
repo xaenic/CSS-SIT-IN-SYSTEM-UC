@@ -39,6 +39,7 @@ function get_staffs($connect)
 
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
 // function cleardata($data)
 // {
 //     $antiXss = new AntiXSS();
