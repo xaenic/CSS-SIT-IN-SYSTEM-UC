@@ -23,6 +23,11 @@ $students = get_students($connect);
 ?>
 
 
+
+
+
+
+<!-- implement a crud for student -->
 <div class="min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  ">
 
     <!-- Sidebar -->
