@@ -27,7 +27,7 @@ $students = get_students($connect);
 
 
 
-<!-- implement a crud for student -->
+<!-- implement a crud for student  yayawa last nalang ni-->
 <div class="min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  ">
 
     <!-- Sidebar -->
