@@ -3,6 +3,7 @@
 /*-----------------------------------
   Description: Sit-In Monitoring System for CSS at the University of Cebu
   Author: Allan Villegas
+  
   Author URI: https://github.com/xaenic
 -----------------------------------*/
 
