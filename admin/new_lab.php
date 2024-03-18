@@ -6,7 +6,7 @@ require '../shared/header.php';
 if (!isset($_SESSION['email']))
     header('Location: /admin/login');
 if (!isset($_SESSION['role']))
-    header('Location: /');
+    header('Location: /admin/login');
 
 $error = '';
 $room_name = '';
