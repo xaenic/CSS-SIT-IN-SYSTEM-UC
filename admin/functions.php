@@ -40,6 +40,17 @@ function get_staffs($connect)
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function get_student($connect,$id_no){
+    $statement = $connect->prepare("SELECT * FROM students WHERE id = :id");
+    $statement->execute(array(
+        ':id' => $id_no
+    ));
+    $statement = $statement->fetchAll();
+    return ($statement) ? $statement : false;
+}
+
+
+
 // function cleardata($data)
 // {
 //     $antiXss = new AntiXSS();

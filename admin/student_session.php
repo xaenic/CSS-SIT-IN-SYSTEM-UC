@@ -15,8 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $id =   isset($_GET['id']) ? $_GET['id'] : null ;
 
 if(!$id)
-    header('Location: ./students')
+    header('Location: ./students');
+    
+$connect = connect($database);
+$student = get_student($connect,$id);
 
+if(!$student)
+    header('Location: ./students');
 ?>
 <div class="min-h-screen bg-gradient-to-t from-slate-900 to-gray-900  ">
     <!-- Sidebar -->
