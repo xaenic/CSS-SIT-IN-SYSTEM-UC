@@ -20,6 +20,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css
+    " rel="stylesheet">
 
     <link href="../assets/chosen.css" rel="stylesheet" />
 
