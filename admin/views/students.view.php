@@ -1,4 +1,13 @@
-<div class="mt-10 flex flex-col gap-6">
+<div class="mt-10 flex flex-col relative gap-6">
+    <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"> 
+        <div id="modal" class="hidden bg-gradient-to-t from-slate-900 to-gray-900 p-10 rounded-lg z-10 flex flex-col gap-4">
+                <h1>Do you really want to delete?</h1>
+                <div class="flex items-center justify-center gap-2">
+                     <a href="" class="bg-green-500  cursor-pointer hover:bg-green-700 duration-200 transition-colors p-1 px-3 rounded-md">Yes</a>
+                     <span class="bg-red-500 cursor-pointer hover:bg-red-700 duration-200 transition-colors  p-1 px-3 rounded-md">Cancel</span>
+                </div>
+        </div>
+    </div>
     <div class="border-b pb-2 border-gray-700">
         <h1 class="text-xl">Students</h1>
     </div>
@@ -101,8 +110,12 @@
                                <a href="./student_session?id=${student.id}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
                                </a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15v-4.25l9.175-9.175q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662L13.25 15zm10.6-9.2l1.425-1.4l-1.4-1.4L18.2 4.4zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925L7 9.925V17h7.05L21 10.05V19q0 .825-.587 1.413T19 21z"/></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15v-4.25l9.175-9.175q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4q0 .375-.137.738t-.438.662L13.25 15zm10.6-9.2l1.425-1.4l-1.4-1.4L18.2 4.4zM5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h8.925L7 9.925V17h7.05L21 10.05V19q0 .825-.587 1.413T19 21z"/></svg>
+                               <div id="delete">
+                                <input  value="${student.id}" type="hidden"/>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></svg>
+                               </div>
+                               
                                 </td></tr>`;
                     }
                     
@@ -110,6 +123,13 @@
         return d_content;
      }
     $(document).ready(function () {
+
+     
+
+
+
+
+
         const students = <?php echo json_encode($students); ?>;
         const tbody = $('#tbody')
         let d_content = append_students(students);
@@ -139,5 +159,23 @@
               
              tbody.html(d_content);
         })
+
+
+         $( "#delete" ).on( "click", function() {
+                const id = $(this).find('input').val()
+                const modal = $('#modal');
+
+                modal.removeClass('hidden');
+
+                modal.find('h1').html(`Do you really want to delete ${id}?`)
+
+
+                modal.find('a').attr('href','/dashboard')
+
+                modal.find('span').on('click',function(){
+                    modal.addClass('hidden');
+                })
+        } );
+
     });
 </script>
