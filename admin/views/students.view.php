@@ -1,5 +1,5 @@
 <div class="mt-10 flex flex-col relative gap-6">
-    <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"> 
+    <div class="absolute -z-10 top-0 left-0 right-0 bottom-0 flex items-center justify-center"> 
         <div id="modal" class="hidden bg-gradient-to-t from-slate-900 to-gray-900 p-10 rounded-lg z-10 flex flex-col gap-4">
                 <h1>Do you really want to delete?</h1>
                 <div class="flex items-center justify-center gap-2">
@@ -124,12 +124,6 @@
      }
     $(document).ready(function () {
 
-     
-
-
-
-
-
         const students = <?php echo json_encode($students); ?>;
         const tbody = $('#tbody')
         let d_content = append_students(students);
@@ -162,6 +156,7 @@
 
 
          $( "#delete" ).on( "click", function() {
+               
                 const id = $(this).find('input').val()
                 const modal = $('#modal');
 
