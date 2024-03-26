@@ -49,7 +49,12 @@ function get_student($connect,$id_no){
     return ($statement) ? $statement : false;
 }
 
-
+function get_sessions($connect)
+{
+    $sentence = $connect->prepare("SELECT * FROM sessions INNER JOIN students ON students.id = sessions.student_id ORDER BY time_out ");
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
 
 // function cleardata($data)
 // {

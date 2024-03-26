@@ -71,9 +71,11 @@
                         <input type="text"  Disabled value="<?php echo $student[0]['no_sessions'];?>" class="px-3 bg-slate-700 rounded-md outline-none p-1"/>
                     </div>
                 </div>
-                  <div class="flex flex-col gap-1 items-start">
+                
+                <div class="flex flex-col gap-1 items-start">
                     <input type="submit" value="Start" class="rounded-md cursor-pointer bg-green-500 px-3 p-1"/>
                 </div>
+                
             </form>
             <?php }?>
         </section>

@@ -35,9 +35,16 @@
             <span class="text-slate-300">Disabled: </span>
            <h1><?php echo ($student[0]['active'] == 1 ? 'False' : 'True'); ?></h1>
         </div>
+        <div class="flex gap-3">
         <div class="flex items-center gap-2 mt-5">
             <a href="./sitin?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-green-500">Sit-In</a>
+        </div>  
+        <div class="flex items-center gap-2 mt-5">
+            <a href="./delete?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-red-500">Delete</a>
         </div>
+        </div>
+      
+        
     </div>
 
     <h1 class="text-lg border-t border-gray-600 pt-6">Session Records</h1>

@@ -35,11 +35,11 @@ $dashboard = isset($_SESSION['role']) ? '/dashboard' : '/admin/dashboard';
                 </div>
             </section>
              <section id="widget_2" class="mt-5 flex flex-col gap-5">
-                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == '') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'View Records') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
                     </svg>
-                    <a href="./students" class="w-full">Sit-In Records</a>
+                    <a href="./records" class="w-full">View Records</a>
                 </div>
             </section>
              <section id="widget_2" class="mt-5 flex flex-col gap-5">
