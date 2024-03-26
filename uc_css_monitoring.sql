@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2024 at 07:19 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Mar 26, 2024 at 04:44 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,10 +89,18 @@ INSERT INTO `schedules` (`id`, `day`, `start_time`, `end_time`, `created_at`, `u
 CREATE TABLE `sessions` (
   `session_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `laboratory_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `lab_name` varchar(254) NOT NULL,
+  `purpose` varchar(254) NOT NULL,
+  `time_in` datetime NOT NULL DEFAULT current_timestamp(),
+  `time_out` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`session_id`, `student_id`, `lab_name`, `purpose`, `time_in`, `time_out`) VALUES
+(4, 18, 'Lab 524', 'Java', '2024-03-26 23:41:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -175,8 +183,7 @@ ALTER TABLE `schedules`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`session_id`),
-  ADD KEY `fk_student_id` (`student_id`),
-  ADD KEY `fk_laboratory_id` (`laboratory_id`);
+  ADD KEY `student_id_fk` (`student_id`);
 
 --
 -- Indexes for table `students`
@@ -210,7 +217,7 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -232,8 +239,7 @@ ALTER TABLE `user`
 -- Constraints for table `sessions`
 --
 ALTER TABLE `sessions`
-  ADD CONSTRAINT `fk_laboratory_id` FOREIGN KEY (`laboratory_id`) REFERENCES `labs` (`id`),
-  ADD CONSTRAINT `fk_student_id` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`);
+  ADD CONSTRAINT `student_id_fk` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
