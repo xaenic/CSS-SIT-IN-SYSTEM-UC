@@ -22,7 +22,7 @@ try {
 
 
 $exist = false;
-$get = $connect->prepare("SELECT * FROM sessions WHERE student_id = :student_id AND updated_at IS NULL");
+$get = $connect->prepare("SELECT * FROM sessions WHERE student_id = :student_id AND time_out IS NULL");
 $get->execute(array(
         ':student_id' =>$id,
     ));
@@ -41,6 +41,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !$exist){
         ':lab_name' => $_POST['laboratory'],
         ':purpose' => $_POST['purpose'],
     ));
+
+    header("Location: ./sitin?id=". $id);
 }
 
 

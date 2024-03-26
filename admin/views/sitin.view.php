@@ -27,10 +27,10 @@
                     <label >Laboratory:   <span class="text-slate-300"><?php echo $result['lab_name'] ?></span></label>
                 </div>
                 <div>
-                    <label class="italic" >Started At:   <span class="text-slate-300"><?php echo $result['created_at'] ?></span></label>
+                    <label class="italic" >Started At:   <span class="text-slate-300"><?php echo $result['time_in'] ?></span></label>
                 </div>
                  <div class="mt-4">
-                     <a href="" class="rounded-md cursor-pointer bg-red-500 px-3 p-1">Logout</a>
+                     <a href="./timeout?id=<?php echo $student[0]['id'];?>&session_id=<?php echo $result['session_id']?>" class="rounded-md cursor-pointer bg-red-500 px-3 p-1">Logout</a>
                  </div>
             </div>
 
