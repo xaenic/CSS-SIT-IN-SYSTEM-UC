@@ -48,9 +48,32 @@
     </div>
 
     <h1 class="text-lg border-t border-gray-600 pt-6">Session Records</h1>
-    <div class="bg-slate-800   rounded-lg flex flex-col p-5">
+         <table id="oktable" class=" mb-10 w-full text-sm text-left rtl:text-right text-white rounded-lg overflow-hidden">
+                <thead class="text-xs bg-gradient-to-l to-slate-800 from-gray-900 uppercase rounded-md">
+                    <tr>
+                        <th class="border px-4 py-4 font-medium border-none  text-center">PURPOSE</th>
+                        <th class="border px-4 py-4 font-medium border-none  text-center">LABORATORY</th>
+                        <th class="border px-4 py-4 font-medium border-none  text-center">TIME IN</th>
+                        <th class="border px-4 py-4 font-medium border-none  text-center">TIME OUT</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody" class="relative">
+                    
 
-      
+                <?php 
 
-    </div>
+            foreach ($students as $student) {
+                   echo '<tr class="odd:bg-gray-700 bg-slate-800">
+                                <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">'.$student['purpose'].'</td>
+                                <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">'.$student['lab_name'].'</td>
+                         
+                                <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">'.date('F j, Y H:i:s', strtotime($student['time_in'])).'</td>
+                                <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">'.date('F j, Y H:i:s', strtotime($student['time_out'])).'</td></tr>
+                                ';
+                }
+            ?>
+
+                </tbody>
+
+            </table>
 </div>

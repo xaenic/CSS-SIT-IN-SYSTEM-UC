@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result_login !== false) {
         $_SESSION['isLoggedIn'] = true;
         $_SESSION['email'] = $email;
+        $_SESSION['id'] =$result_login['id'];
         $_SESSION['first_name'] = $result_login['first_name'];
         echo 'success';
         return;

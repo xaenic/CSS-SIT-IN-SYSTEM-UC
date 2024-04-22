@@ -16,8 +16,9 @@ $id =   isset($_GET['id']) ? $_GET['id'] : null ;
 
 if(!$id)
     header('Location: ./students');
-    
+
 $connect = connect($database);
+$students = get_records_by_id($connect,$id); 
 $student = get_student($connect,$id);
 
 if(!$student)
