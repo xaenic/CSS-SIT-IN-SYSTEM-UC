@@ -134,8 +134,12 @@
                     $('#submitButton').val('Register')
                     console.log(response);
                     console.log(response == 'success')
-                    if (response == 'success') {
-                        $('#success').html('<p> Registered Successfully!</p>');
+                    if (response.includes('success')) {
+                    $('#success').html(`
+    <p>Registered Successfully!</p>
+    <span class="text-red-500">Verify your email <a href="./verify?id=${response.split('.')[1]}" class="text-sky-600">Here</a></span>
+`);
+
 
                         formdata.trigger('reset');
                         return

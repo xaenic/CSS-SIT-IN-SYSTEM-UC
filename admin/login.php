@@ -4,7 +4,7 @@ require "core.php";
 
 if (isset($_SESSION['email'])) {
 
-    header('Location: ./admin/dashboard');
+    header('Location: ./dashboard');
 }
 $connect = connect($database);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

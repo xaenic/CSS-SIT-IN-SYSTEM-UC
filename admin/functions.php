@@ -61,6 +61,12 @@ function get_records($connect)
     $sentence->execute();
     return $sentence->fetchAll(PDO::FETCH_ASSOC);
 }
+function get_announcements($connect)
+{
+    $sentence = $connect->prepare("SELECT * FROM announcement");
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
 function get_records_by_id($connect,$id)
 {
     $sentence = $connect->prepare("SELECT * FROM sessions INNER JOIN students ON students.id = sessions.student_id WHERE time_out IS NOT NULL AND ID = '$id'ORDER BY time_out ");

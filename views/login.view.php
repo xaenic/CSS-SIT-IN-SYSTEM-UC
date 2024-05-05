@@ -32,12 +32,13 @@
         </div>
         <div class="flex justify-between">
             <div>
-                <span class="text-slate-500"> Don't have an account? <a href="/register" class="text-blue-500">Sign Up</a></span>
+                <span class="text-slate-500">  <a href="/register" class="text-blue-500">Sign Up</a></span>
             </div>
-            <div>
-                <a href="/register" class="text-blue-500">Forgot Password? </a>
+           <div class="flex justify-end">
+                <a href="/forgot" class="text-gray-700">Forgot Password? </a>
             </div>
         </div>
+         
     </form>
 
 </div>
@@ -65,11 +66,17 @@
                     if (response == 'success') {
                         return window.location.href = '/dashboard';
                     }
-                    $('#error').html('<p>' + response + '</p>');
+                    if(response.includes('.')) {
+                          $('#error').html('<p>' + response.split('.')[0] + `</p> <span class="text-red-500 text-sm">Verify your email <a href="./verify?id=${response.split('.')[1]}" class="text-sky-600">Here</a></span>`);
+                    }else{
+                        $('#error').html('<p>' + response + `</p>`);
+                    }
+
+                   
                 },
                 error: function(xhr, status, error) {
                     // Display error message
-                    $('#error').html('<p>Error: ' + error + '</p>');
+                    $('#error').html('<p>Error: ' + error + '</p><');
                 }
             });
         });

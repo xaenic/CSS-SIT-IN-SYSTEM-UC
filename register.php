@@ -2,8 +2,7 @@
 require "core.php";
 
 $page_title = "Register";
-if (isset($_SESSION['email'])) {
-
+if (isset($_SESSION['verified'])) {
     header('Location: ./dashboard');
 }
 
@@ -60,7 +59,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ':course' => $course,
         ':year' => $year,
     ));
-    echo 'success';
+
+    $last_inserted_id = $connect->lastInsertId();
+    $code = generateVerificationCode();
+    $data = array(
+        'code' => $code,
+        'email' => $email,
+        'from' => 'xaenic@gmail.com',
+        'name' => $first_name,
+    );
+
+    // Convert data to JSON format
+    $data_json = json_encode($data);
+
+    // Set up the POST request headers
+    $options = array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => 'Content-Type: application/json',
+            'content' => $data_json
+        )
+    );
+    $context = stream_context_create($options);
+    $response = file_get_contents('https://mailer-xi.vercel.app/api/verify', false, $context);
+    echo $response;
+    $statment = $connect->prepare(
+        "INSERT INTO verify_token (student_id,token) VALUES ( :student_id, :token)"
+    );
+    $statment->execute(array(
+        ':student_id' => $last_inserted_id,
+        ':token' => $code,
+    ));
+    echo "success." . $last_inserted_id;
     return;
 }
 

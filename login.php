@@ -1,12 +1,10 @@
 <?php
 require "core.php";
 $page_title = "Login";
-if (isset($_SESSION['email'])) {
-
+if (isset($_SESSION['verified'])) {
     header('Location: ./dashboard');
 }
-
-
+$id = "";
 $connect = connect($database);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['email'])) {
@@ -27,21 +25,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         return;
     }
-    $statement = $connect->prepare("SELECT * FROM students WHERE email = :email AND password = :password AND active = 1 ");
+    $statement = $connect->prepare("SELECT * FROM students WHERE email = :email AND password = :password");
     $statement->execute(array(
         ':email' => $email,
         ':password' => $password
     ));
 
-
     $result_login = $statement->fetch();
 
     if ($result_login !== false) {
-        $_SESSION['isLoggedIn'] = true;
-        $_SESSION['email'] = $email;
-        $_SESSION['id'] =$result_login['id'];
-        $_SESSION['first_name'] = $result_login['first_name'];
-        echo 'success';
+        $id = $result_login['id'];
+        if($result_login['active'] == 1) {
+             $_SESSION['isLoggedIn'] = true;
+            $_SESSION['email'] = $email;
+            $_SESSION['id'] =$result_login['id'];
+            $_SESSION['verified'] = true;
+            $_SESSION['first_name'] = $result_login['first_name'];
+            echo 'success';
+        }else {
+            echo 'Email not verified yet.'. $id;;
+        }
+       
         return;
     } else {
 
