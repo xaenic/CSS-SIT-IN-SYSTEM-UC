@@ -1,6 +1,5 @@
- <h1 class="text-xl text-white mt-5">Welcome <?php echo $_SESSION['first_name']; ?></h1>
- <div class="flex flex-wrap  items-center  mt-8 gap-4">
 
+ <div class="flex flex-wrap  items-center  mt-8 gap-4">
      <div class="bg-slate-800  text-white p-5 w-full lg:w-72 rounded-md flex flex-col gap-3">
          <div class="flex justify-between items-center">
              <h1>Remaining Sessions</h1>
@@ -10,8 +9,27 @@
          </div>
          <div class="flex flex-col gap-3">
              <h1 class="text-2xl font-semibold"><?php echo $user['no_sessions']; ?></h1>
-
          </div>
      </div>
-
  </div>
+
+ <h1 class="text-xl text-white my-5 ">Latest Announcements</h1>
+<div class="flex flex-wrap gap-4">
+    <?php foreach($announcements as $announcement):?>
+    <div class="min-w-[400px] min-h-[220px] text-sm text-white  p-4 rounded-md bg-slate-800 overflow-hidden ">
+        <div class="flex justify-between items-center text-sm"> 
+            <h1><?php echo $announcement['title'];?></h1>
+            <span class="text-slate-300">Admin</span>
+        </div>
+        <div class="mt-2 h-full overflow-hidden">
+          
+            <div class=" p-2 bg-slate-700 rounded-md h-full">
+                <?php echo $announcement['content'];?>
+            </div>
+        </div>
+        <div class="flex text-white">
+            <p><?php echo $announcement['date_created'];?></p>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>

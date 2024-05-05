@@ -11,7 +11,15 @@ function connect($database)
         return false;
     }
 }
-
+function get_announcements($connect, $id)
+{
+    $sentence = $connect->prepare("SELECT * FROM announcement LEFT JOIN announcement_reader ON announcement.id = announcement_reader.announcement_id AND announcement_reader.user_id = :id");
+    $sentence->execute(array(
+        ':id' => $id
+    ));
+    $sentence->execute();
+    return $sentence->fetchAll(PDO::FETCH_ASSOC);
+}
 function generateVerificationCode($length = 6) {
     // Characters that can be used in the verification code
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

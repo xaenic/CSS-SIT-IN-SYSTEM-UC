@@ -14,8 +14,8 @@ $statement = $connect->prepare("SELECT * FROM students WHERE email = :email AND 
 $statement->execute(array(
     ':email' => $_SESSION['email'],
 ));
-
 $user = $statement->fetch();
+$announcements = get_announcements($connect, $user['id']);
 ?>
 
 
