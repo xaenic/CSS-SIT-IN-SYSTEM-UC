@@ -65,6 +65,7 @@
 
 <script>
     $(document).ready(function() {
+        
         const showButton = $('#showSide');
         const hideButton = $('#hideSide');
         showButton.click(function() {

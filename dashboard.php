@@ -15,6 +15,11 @@ $statement->execute(array(
     ':email' => $_SESSION['email'],
 ));
 $user = $statement->fetch();
+$id = $user['id'];
+$sentence = $connect->prepare("SELECT * FROM sessions INNER JOIN students ON students.id = sessions.student_id  WHERE time_out IS NOT NULL AND id = '$id' ORDER BY time_out ");
+$sentence->execute();
+$sessions = $sentence->fetchAll(PDO::FETCH_ASSOC);
+
 $announcements = get_announcements($connect, $user['id']);
 ?>
 

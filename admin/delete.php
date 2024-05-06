@@ -23,8 +23,12 @@ if(isset($_GET['id'])){
     $stmt = $connect->prepare($sql);
     $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
     $stmt->execute();
+    $sql = "DELETE FROM verify_token WHERE student_id = :id";
+    $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
     $rowCount = $stmt->rowCount();
-    if($rowCount  > 0){
+   
         $sql = "DELETE FROM students WHERE id = :id";
         $stmt = $connect->prepare($sql);
         $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
@@ -33,7 +37,7 @@ if(isset($_GET['id'])){
 
         if($rowCount >0 )
             header("Location: ./students");
-    }
+    
 }
 
 ?>
