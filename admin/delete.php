@@ -27,6 +27,10 @@ if(isset($_GET['id'])){
     $stmt = $connect->prepare($sql);
     $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
     $stmt->execute();
+    $sql = "DELETE FROM feedback WHERE user_id = :id";
+    $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
     $rowCount = $stmt->rowCount();
    
         $sql = "DELETE FROM students WHERE id = :id";

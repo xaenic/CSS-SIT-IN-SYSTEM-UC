@@ -50,13 +50,13 @@ $dashboard = isset($_SESSION['role']) ? '/dashboard' : '/admin/dashboard';
                 </div>
             </section>
             <section id="widget_2" class="mt-5 flex flex-col gap-5">
-                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Announcements' || $parent[0] == 'Students') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Announcements' || $parent[0] == 'Announcements') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.664 3.478L8 8v7l.748.267l-1.127 2.254a1.999 1.999 0 0 0 1.156 2.792l4.084 1.361a2.015 2.015 0 0 0 2.421-1.003l1.303-2.606l4.079 1.457A1 1 0 0 0 22 18.581V4.419a1 1 0 0 0-1.336-.941m-7.171 16.299L9.41 18.416l1.235-2.471l4.042 1.444zM4 15h2V8H4c-1.103 0-2 .897-2 2v3c0 1.103.897 2 2 2"></path></svg>
                     <a href="./announcement" class="w-full">Announcements</a>
                 </div>
             </section>
               <section id="widget_2" class="mt-5 flex flex-col gap-5">
-                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'FeedBacks' || $parent[0] == 'Students') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'FeedBacks' || $parent[0] == 'Reservations') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm10-7q.425 0 .713-.288T13 14t-.288-.712T12 13t-.712.288T11 14t.288.713T12 15m-1-4h2V5h-2z"/></svg>
                     <a href="./feedback" class="w-full">FeedBacks</a>
                 </div>
@@ -68,9 +68,21 @@ $dashboard = isset($_SESSION['role']) ? '/dashboard' : '/admin/dashboard';
                 </div>
             </section>
              <section id="widget_2" class="mt-5 flex flex-col gap-5">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Reservations' || $parent[0] == 'Reservations') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 15v4h3v2H8v-2h3v-4H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM8 8v2h8V8z"/></svg>x
+                    <a href="./reservations" class="w-full">Reservations</a>
+                </div>
+            </section>
+             <section id="widget_2" class="mt-5 flex flex-col gap-5">
                 <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Generate Report') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9 19H7v-9h2zm4 0h-2v-6h2zm4 0h-2v-3h2zM14 9h-1V4l5 5z"></path></svg>
                     <a href="./generate" class="w-full">Generate Report</a>
+                </div>
+            </section>
+              <section id="widget_2" class="mt-5 flex flex-col gap-5">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Daily Analytics') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9 19H7v-9h2zm4 0h-2v-6h2zm4 0h-2v-3h2zM14 9h-1V4l5 5z"></path></svg>
+                    <a href="./daily" class="w-full">Daily Analytics</a>
                 </div>
             </section>
         <?php }  else {?>
@@ -89,6 +101,12 @@ $dashboard = isset($_SESSION['role']) ? '/dashboard' : '/admin/dashboard';
                 </div>
             </section>
             <section id="widget_2" class="mt-5 flex flex-col gap-5">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Reserve' || $parent[0] == 'Reserve') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 15v4h3v2H8v-2h3v-4H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM8 8v2h8V8z"/></svg>
+                    <a href="./reserve" class="w-full">Reservation</a>
+                </div>
+            </section>
+            <section id="widget_2" class="mt-5 flex flex-col gap-5">
                 <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Announcements' || $parent[0] == 'Students') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.664 3.478L8 8v7l.748.267l-1.127 2.254a1.999 1.999 0 0 0 1.156 2.792l4.084 1.361a2.015 2.015 0 0 0 2.421-1.003l1.303-2.606l4.079 1.457A1 1 0 0 0 22 18.581V4.419a1 1 0 0 0-1.336-.941m-7.171 16.299L9.41 18.416l1.235-2.471l4.042 1.444zM4 15h2V8H4c-1.103 0-2 .897-2 2v3c0 1.103.897 2 2 2"></path></svg>
                     <a href="./announcement" class="w-full">Announcements</a>
@@ -104,6 +122,12 @@ $dashboard = isset($_SESSION['role']) ? '/dashboard' : '/admin/dashboard';
                 <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Report') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm-2.75 8L3 15.75v-7.5L8.25 3h7.5L21 8.25v7.5L15.75 21z"/></svg>
                     <span href="" class="w-full">Report</span>
+                </div>
+            </section>
+             <section id="report"id="widget_2" class="mt-5 flex flex-col gap-5">
+                <div class="flex gap-2 items-center hover:bg-slate-900 <?php if ($page_title == 'Rules') { echo 'bg-gray-900'; } ?> cursor-pointer text-white rounded-lg px-3 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 32 32"><path fill="none" d="M9 16h14v2H9zm0-6h14v2H9z"/><path fill="currentColor" d="M26 2H6a2 2 0 0 0-2 2v13a10.98 10.98 0 0 0 5.824 9.707L16 30l6.176-3.293A10.98 10.98 0 0 0 28 17V4a2 2 0 0 0-2-2m-3 16H9v-2h14Zm0-6H9v-2h14Z"/></svg>
+                    <a href="./rules" class="w-full">Rules</a>
                 </div>
             </section>
         <?php } ?>

@@ -57,13 +57,13 @@
                </div>
                 <div class="flex flex-col gap-2">
                     <label class="text-slate-300">Laboratory</label>
-                    <select name="laboratory" class="bg-slate-700 p-2 rounded-md">
-                        <option value="Lab 524">Lab 524</option>
-                        <option value="Lab 526">Lab 526</option>
-                        <option value="Lab 528">Lab 528</option>
-                        <option value="Lab 542">Lab 542</option>
-                        <option value="Lab 543">Lab 543</option>
-                    </select>
+                        <select name="laboratory" class="bg-slate-700 p-2 rounded-md">
+                            <option value="Lab 524">Lab 524</option>
+                            <option value="Lab 526">Lab 526</option>
+                            <option value="Lab 528">Lab 528</option>
+                            <option value="Lab 542">Lab 542</option>
+                            <option value="Lab 543">Lab 543</option>
+                        </select>
                </div>
                <div class="flex flex-col gap-1">
                     <label class="text-slate-300">REMAINING SESSIONS</label>

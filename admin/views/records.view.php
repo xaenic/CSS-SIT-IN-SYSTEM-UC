@@ -93,10 +93,10 @@
                             <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.first_name} ${student.last_name}</td>
                             <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.purpose}</td>
                             <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.lab_name}</td>
-                            <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.time_in}</td>
+                            <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.time_in !== null ? student.time_in : 'None'}</td>
                             <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white">${student.time_out !== null ? student.time_out : 'Ongoing'}</td>
                             <td class="border px-4 py-4 border-none text-center text-xs md:text-sm text-white"> 
-                            ${student.time_out !== null ? '<span>Finished</span>' : `<a href="./timeout?id=${student.id}&session_id=${student.session_id}" class="rounded-md cursor-pointer bg-red-500 px-3 p-1">Logout</a>`}
+                            ${student.time_out !== null ? '<span>Finished</span>' : student.time_in == null ?`<a href="./timein?id=${student.id}&session_id=${student.session_id}" class="rounded-md cursor-pointer bg-green-500 px-3 p-1">Time In</a>`: `<a href="./timeout?id=${student.id}&session_id=${student.session_id}" class="rounded-md cursor-pointer bg-red-500 px-3 p-1">Logout</a>`}
                           
                             
                             </td>

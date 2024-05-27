@@ -5,10 +5,10 @@
     <div class="border-b pb-2 border-gray-700">
         <h1 class="text-xl"><?php echo $page_title;?></h1>
           <div class="flex justify-end">
-            <div id="add"  class="cursor-pointer flex items-center  gap-2 bg-green-500 text-white px-3 p-2 rounded-md">
+            <!-- <div id="add"  class="cursor-pointer flex items-center  gap-2 bg-green-500 text-white px-3 p-2 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20 14h-6v6h-4v-6H4v-4h6V4h4v6h6z"></path></svg>
                 <button  class="text-sm">Announcement</button>
-            </div>
+            </div> -->
         </div>
     </div>
 

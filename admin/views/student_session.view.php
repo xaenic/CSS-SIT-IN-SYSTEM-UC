@@ -2,7 +2,14 @@
     <div class="border-b pb-2 border-gray-700">
         <h1 class="text-xl">Student Profile</h1>
     </div>
-    <h1 class="text-red-400"><?php echo $error; ?></h1>
+    <h1 class="text-red-400"><?php echo $error; ?>
+<?php if(isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+
+    $_SESSION['msg'] = null;
+}
+?>
+</h1>
 
     
     <div>
@@ -38,7 +45,13 @@
         <div class="flex gap-3">
         <div class="flex items-center gap-2 mt-5">
             <a href="./sitin?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-green-500">Sit-In</a>
-        </div>  
+        </div> 
+          <div class="flex items-center gap-2 mt-5">
+            <a href="./reset_password?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-sky-500">Reset Password</a>
+        </div>
+          <div class="flex items-center gap-2 mt-5">
+            <a href="./reset_session?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-purple-500">Reset Sessions</a>
+        </div> 
         <div class="flex items-center gap-2 mt-5">
             <a href="./delete?id=<?php echo $student[0]['id']?>" class=" px-3 p-1 rounded-md bg-red-500">Delete</a>
         </div>

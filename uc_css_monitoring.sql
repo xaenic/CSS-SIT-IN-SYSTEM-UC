@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2024 at 04:27 PM
+-- Generation Time: May 27, 2024 at 11:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -48,7 +48,9 @@ INSERT INTO `announcement` (`id`, `title`, `content`, `status`, `visibility`, `d
 (6, 'asda', '<p>dadad</p>', 1, 'All', '2024-05-05 22:26:58', NULL),
 (7, 'adad', '<p>adada</p>', 1, 'All', '2024-05-05 22:27:07', NULL),
 (8, 'Amaw man diay ka noh', '<p><i>BOGO</i></p><p><br></p><p><u>BOGO&nbsp;</u><br><br>KA</p>', 1, 'All', '2024-05-05 22:48:34', NULL),
-(9, 'NO CLASS', '<p>Hello guys,</p><p>Please please allow each of your<b> group to participate</b> in the creation of File Maintenance UI as this is</p><p><code>your semi final requirement.&nbsp;</code></p><p><i>Thank you</i></p>', 1, 'Student', '2024-05-05 22:54:38', NULL);
+(9, 'NO CLASS', '<p>Hello guys,</p><p>Please please allow each of your<b> group to participate</b> in the creation of File Maintenance UI as this is</p><p><code>your semi final requirement.&nbsp;</code></p><p><i>Thank you</i></p>', 1, 'Student', '2024-05-05 22:54:38', NULL),
+(10, 'hahah', '<p>ahahaha</p>', 1, 'All', '2024-05-28 03:54:27', NULL),
+(11, 'hah', '<p>ahah</p>', 0, 'All', '2024-05-28 03:54:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -62,6 +64,33 @@ CREATE TABLE `announcement_reader` (
   `is_read` int(11) NOT NULL,
   `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `purpose` varchar(254) NOT NULL,
+  `laboratory` varchar(254) NOT NULL,
+  `reservation_date` date NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(254) NOT NULL DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `student_id`, `purpose`, `laboratory`, `reservation_date`, `date_created`, `status`) VALUES
+(15, 47, 'Java', 'Lab 524', '2024-05-28', '2024-05-28 04:58:44', 'Cancelled'),
+(16, 47, 'Java', 'Lab 524', '2024-05-30', '2024-05-28 04:58:50', 'Cancelled'),
+(17, 47, 'Java', 'Lab 524', '2024-05-29', '2024-05-28 04:59:20', 'Cancelled'),
+(18, 47, 'Java', 'Lab 524', '2024-05-31', '2024-05-28 05:08:24', 'Accepted'),
+(19, 47, 'Java', 'Lab 524', '2024-05-30', '2024-05-28 05:20:28', 'Accepted');
 
 -- --------------------------------------------------------
 
@@ -85,7 +114,8 @@ INSERT INTO `feedback` (`id`, `user_id`, `content`, `date_created`, `resolved`) 
 (1, 47, 'asdasda', '2024-05-06 22:08:57', 0),
 (2, 47, 'asdasd', '2024-05-06 22:09:20', 0),
 (3, 47, 'asdas', '2024-05-06 22:09:25', 0),
-(4, 47, 'okay do', '2024-05-06 22:09:37', 0);
+(4, 47, 'okay do', '2024-05-06 22:09:37', 0),
+(5, 47, 'ahaha', '2024-05-28 05:38:17', 0);
 
 -- --------------------------------------------------------
 
@@ -170,7 +200,7 @@ CREATE TABLE `sessions` (
   `student_id` int(11) NOT NULL,
   `lab_name` varchar(80) NOT NULL,
   `purpose` varchar(254) NOT NULL,
-  `time_in` datetime NOT NULL DEFAULT current_timestamp(),
+  `time_in` datetime DEFAULT current_timestamp(),
   `time_out` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -179,8 +209,11 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `student_id`, `lab_name`, `purpose`, `time_in`, `time_out`) VALUES
-(19, 47, 'Lab 524', 'Java', '2024-05-06 17:57:21', '2024-05-06 17:57:22'),
-(20, 47, 'Lab 528', 'C++', '2024-05-06 17:57:32', '2024-05-06 17:57:32');
+(21, 47, 'Lab 524', 'Java', '2024-05-28 04:00:15', '2024-05-28 04:00:16'),
+(22, 47, 'Lab 524', 'Java', '2024-05-28 05:01:01', '2024-05-28 05:26:23'),
+(23, 47, 'Lab 524', 'Java', '2024-05-28 05:26:18', '2024-05-28 05:26:22'),
+(24, 47, 'Lab 524', 'Java', '2024-05-28 05:26:20', '2024-05-28 05:26:23'),
+(25, 47, 'Lab 543', 'Python', '2024-05-28 05:33:25', '2024-05-28 05:33:26');
 
 -- --------------------------------------------------------
 
@@ -208,7 +241,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `email`, `password`, `first_name`, `last_name`, `id_no`, `course`, `year`, `no_sessions`, `active`, `created_at`, `updated_at`) VALUES
-(47, 'allanvillegas35@gmail.com', '263fec58861449aacc1c328a4aff64aff4c62df4a2d50b3f207fa89b6e242c9aa778e7a8baeffef85b6ca6d2e7dc16ff0a760d59c13c238f6bcdc32f8ce9cc62', 'Allan', 'Villegas', 21419023, '1st', '3rd', 28, 1, '2024-05-03 18:17:20', '2024-05-03 18:17:20');
+(47, 'allanvillegas35@gmail.com', 'd404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db', 'Allan', 'Villegas', 21419023, '1st', '3rd', 30, 1, '2024-05-03 18:17:20', '2024-05-03 18:17:20');
 
 -- --------------------------------------------------------
 
@@ -265,6 +298,13 @@ ALTER TABLE `announcement`
 ALTER TABLE `announcement_reader`
   ADD KEY `user_id_announce` (`user_id`),
   ADD KEY `announcement_id_announce` (`announcement_id`);
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_stundet_bookings` (`student_id`);
 
 --
 -- Indexes for table `feedback`
@@ -326,13 +366,19 @@ ALTER TABLE `verify_token`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `labs`
@@ -356,13 +402,13 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(80) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(80) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -374,7 +420,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `verify_token`
 --
 ALTER TABLE `verify_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
@@ -386,6 +432,12 @@ ALTER TABLE `verify_token`
 ALTER TABLE `announcement_reader`
   ADD CONSTRAINT `announcement_id_announce` FOREIGN KEY (`announcement_id`) REFERENCES `announcement` (`id`),
   ADD CONSTRAINT `user_id_announce` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD CONSTRAINT `fk_stundet_bookings` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `feedback`
